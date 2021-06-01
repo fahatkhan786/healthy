@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Healthy</title>
+	<link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+	<div class="container">
+		<header id="navbar">
+			<h1><span>Good</span>Foods</h1>
+			<ul class="menu">
+					<li><a href="#Home" class="active">Home</a></li>
+					<li><a href="#Menu">Menu</a></li>
+					<li><a href="#About">About</a></li>
+					<li><a href="#Contact">Contact</a></li>
+			</ul>
+			<span class="menu_icon" onclick="menuToggle();"><i class="fas fa-bars"></i></span>
+			<span class="close_icon" onclick="menuToggle();"><i class="fas fa-times"></i></span>
+		</header> 
+		
+		<div class="content">
+			<div class="banner" id="slideshowText">
+				<div class="active">
+					<h2> Eat<span> healthy</span> <br> Stay healthy</h2>
+					<span>
+						<p> “Smile, because it confuses people. Smile, because it's easier than explaining what is killing you inside.” “As you know, madness is like gravity...all it takes is a little push.” </p>
+					</span>
+					<a href="#read">Read More</a>
+				</div>
+				<div>
+					<h2> Eat your <br> <span>veggies</span></h2>
+					<span>
+						<p> “Smile, because it confuses people. Smile, because it's easier than explaining what is killing you inside.” </p>
+					</span>
+					<a href="#read">Read More</a>
+				</div>
+				<div>
+					<h2> Good <span>food</span><br> <span>Good</span> mood</h2>
+					<span>
+						<p> “It is not a short term Diet. It is a long term Lifestyle change.” </p>
+					</span>
+					<a href="#read">Read More</a>
+				</div>
+			</div>
+			<div class="banner_img" id="slideshow">
+				<img src="1.jpg" class="active">
+				<img src="2.jpg">
+				<img src="3.jpg">
+			</div>
+		</div>
+
+		<div class="icons">
+			<ul class="social">
+				<li><a href="#insta"><i class="fab fa-instagram"></i></a></li>
+				<li><a href="#twitter"><i class="fab fa-twitter"></i></a></li>
+				<li><a href="#fb"><i class="fab fa-facebook-square"></i></a></li>
+				<li><a href="#Utube"><i class="fab fa-youtube"></i></a></li>
+			</ul>
+			<ul class="controls">
+				<li><i class="fas fa-arrow-left" onclick="prev();prevText();"></i></li>
+				<li><i class="fas fa-arrow-right" onclick="next();nextText();"></i></li>
+			</ul>
+		</div>
+
+		<script type="text/javascript">
+			var slideshow = document.getElementById('slideshow');
+			var slides = slideshow.getElementsByTagName('img');
+			var index = 0;
+			function next(){
+				slides[index].classList.remove('active');
+				index = (index + 1) % slides.length;
+				slides[index].classList.add('active');
+			}
+			function prev(){
+				slides[index].classList.remove('active');
+				index = (index - 1 + slides.length) % slides.length;
+				slides[index].classList.add('active');
+			}
+
+			var slideshowText = document.getElementById('slideshowText');
+			var slidesText = slideshowText.getElementsByTagName('div');
+			var i = 0;
+			function nextText(){
+				slidesText[i].classList.remove('active');
+				i = (i + 1) % slidesText.length;
+				slidesText[i].classList.add('active');
+			}
+			function prevText(){
+				slidesText[i].classList.remove('active');
+				i = (i - 1 + slidesText.length) % slidesText.length;
+				slidesText[i].classList.add('active');
+			}
+
+			function menuToggle(){
+				var nav = document.getElementById('navbar');
+				nav.classList.toggle('active')
+			}
+		</script>
+</body>
+</html>
